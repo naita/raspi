@@ -15,7 +15,7 @@ def captureImage(fname):
     dt = now.strftime("%Y%m%d_%H:%M:%S")
     print(dt)
     try:
-        camera.capture(fname+dt+".jpg") # ,use_video_port=True)
+        camera.capture("fotos/"+fname+dt+".jpg") # ,use_video_port=True)
         time.sleep(5)
     finally:
         camera.close() #sleep(10)
@@ -34,12 +34,9 @@ def captureVideo():
     camera.close()
 
 
-
 while True:
     captureImage("kweekkas_")
-    time.sleep(60*60)
-    #captureVideo()
-    #time.sleep(1*5)
+    time.sleep(60*(60-datetime.now().minute) ) # de tweede en volgende foto's worden op het hele uur genomen
 
 ''''
 while True:
