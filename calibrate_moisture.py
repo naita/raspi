@@ -3,8 +3,9 @@ import json
 import board
 import busio
 #import adafruit_ads1x15.ads1015 as ADS
-import Adafruit_ADS1x15 as ADS
+import Adafruit_ADS1x15 as ADS # werkt
 #from Adafruit_ADS1x15.AnalogIn import AnalogIn
+from adafruit_ads1x15.analog_in import AnalogIn
 
 max_val = None
 min_val = None
@@ -15,7 +16,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # Create the ADC object using the I2C bus
 ads = ADS.ADS1015(i2c)
 
-# Create single-ended input on channel 0
+# Create single-ended input on channel 24
 chan = AnalogIn(ads, ADS.P0)
 
 baseline_check = input("Is Capacitive Sensor Dry? (enter 'y' to proceed): ")

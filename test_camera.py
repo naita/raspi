@@ -23,7 +23,7 @@ def captureImage(f):
     print(dt)
     try:
         camera.capture(f+str(dt)+".jpg",use_video_port=True)
-        sleep(5)
+        time.sleep(5)
     finally:
         camera.close() #sleep(10)
 
@@ -34,8 +34,8 @@ def captureVideo():
     time.sleep(15)
     camera.stop_recording()
 
-captureVideo()
-#captureImage("testbla_")
+#captureVideo()
+captureImage("testbla_")
 
 '''
 while True:

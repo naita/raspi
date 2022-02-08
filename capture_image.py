@@ -33,9 +33,9 @@ def captureVideo():
     camera.stop_recording()
     camera.close()
 
-
+imagelocation='/home/pi/raspi/fotos/'
 while True:
-    captureImage("kweekkas_")
+    captureImage(imagelocation+"kweekkas_")
     time.sleep(60*(60-datetime.now().minute) ) # de tweede en volgende foto's worden op het hele uur genomen
 
 ''''
